@@ -1,7 +1,7 @@
 .mainGrid {
-  @apply flex items-center justify-between gap-4 w-full px-8;
+  @apply grid grid-cols-2 md:flex items-center justify-between gap-4 w-full px-8;
 }
 
 .mainGridItem {
-  @apply border border-zinc-200 rounded-3xl h-[40vh] w-[18vw] hover:w-[24vw] p-5 transition-all flex flex-col items-end justify-between
+  @apply border border-zinc-200 rounded-3xl aspect-square md:h-[40vh] w-full md:w-[18vw] hover:md:w-[24vw] transition-all text-white md:text-[#222831] hover:text-white;
 }
