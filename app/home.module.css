@@ -1,0 +1,7 @@
+.mainGrid {
+  @apply flex items-center justify-between gap-4 w-full px-8;
+}
+
+.mainGridItem {
+  @apply border border-zinc-200 rounded-3xl h-[40vh] w-[18vw] hover:w-[24vw] p-5 transition-all flex flex-col items-end justify-between
+}
