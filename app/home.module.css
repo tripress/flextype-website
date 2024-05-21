@@ -3,5 +3,5 @@
 }
 
 .mainGridItem {
-  @apply border border-zinc-200 rounded-3xl aspect-square md:h-[40vh] w-full md:w-[18vw] hover:md:w-[24vw] transition-all text-white md:text-[#222831] hover:text-white;
+  @apply border border-zinc-200 rounded-3xl aspect-square md:aspect-auto md:h-[40vh] w-full md:w-[18svw] hover:md:w-[24svw] transition-all text-white md:text-[#222831] hover:text-white;
 }
