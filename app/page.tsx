@@ -1,4 +1,6 @@
+'use client'
 import Image from 'next/image'
+import react, {useState} from 'react'
 import styles from './home.module.css'
 import {IconAlbum, IconPhoto, IconPost, IconProject, IconMore} from '@/assets/icons'
 
@@ -36,6 +38,7 @@ const mainGridItem = [
 ]
 
 export default function Home() {
+  const [openItem, setOpenItem] = useState('null')
   return (
     <main className="container mx-auto flex flex-col w-full">
       <div className="flex flex-col md:flex-row w-full items-center justify-between px-8 pb-12 pt-[96px] md:pt-[166px] gap-8">
@@ -49,17 +52,17 @@ export default function Home() {
           To Show OURSELFS
         </div>
       </div>
-      <MainGrid />
+      <MainGrid openItem={openItem} setOpenItem={setOpenItem} />
+      <MainContent openItem={openItem} />
     </main>
   )
 }
 
-const MainGrid = () => {
-  'use client'
+const MainGrid = ({openItem, setOpenItem}: any) => {
   return (
     <div className={`${styles.mainGrid}`}>
       {mainGridItem.map((item) => (
-        <div key={item.name} className={`${styles.mainGridItem} group relative p-2`}>
+        <div key={item.name} className={`${styles.mainGridItem} group relative p-2`} onClick={() => setOpenItem(item.name)}>
           <Image
             src={item.image}
             alt={item.name}
@@ -75,4 +78,8 @@ const MainGrid = () => {
       ))}
     </div>
   )
+}
+
+const MainContent = ({openItem}: any) => {
+  return <>{openItem}</>
 }
